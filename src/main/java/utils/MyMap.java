@@ -2,7 +2,9 @@ package utils;
 
 import java.lang.reflect.Field;
 import java.util.*;
-
+/*
+MyMap ở mức độ content coupling vì sử dụng chỉ định truy cập để get, set các thuộc tính của lớp khác
+ */
 /**
  * The {@link MyMap JSON} class represents JSON objects.
  * To create a new JSON object,

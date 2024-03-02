@@ -20,6 +20,8 @@ public class DeliveryInfo {
         this.shippingInstructions = shippingInstructions;
         this.distanceCalculator = distanceCalculator;
     }
+    // function calculatheSippingFee có mức độ  stamp coupling vì không sử dung tham số order
+    // vẫn là vấn đề truyền thừa thông tin, làm giảm tính độc lập, tăng tính phụ thuộc
 
     public int calculateShippingFee(Order order) {
         int distance = distanceCalculator.calculateDistance(address, province);

@@ -59,7 +59,8 @@ public class Cart {
         }
         if (!allAvailable) throw new MediaNotAvailableException("Some media not available");
     }
-
+    // function checkMediaInCart có mức độ stamp coupling vì chỉ sử dụng thuộc tính id trong biến media truyền vào
+    // truyền thừa thông tin dẫn đến giảm tính độc lập
     public CartItem checkMediaInCart(Media media){
         for (CartItem cartItem : lstCartItem) {
             if (cartItem.getMedia().getId() == media.getId()) return cartItem;

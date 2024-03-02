@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 /**
  * @author nguyenlm Contains helper functions
  */
+// lớp Utils có mức độ common coupling vì lớp này có thể truy cập vào DateFormat
 public class Utils {
 
 	public static DateFormat DATE_FORMATTER = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");

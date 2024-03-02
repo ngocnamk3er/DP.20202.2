@@ -4,7 +4,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 import dao.media.MediaDAO;
-
+/*
+HomeController, PaymentController, PlaceOrderControlller, ViewCartController đều ở mức độ datacoupling vì các lớp này đều kế thừa
+từ lớp BaseController, có 1 phụ thuộc dữ liệu vào lớp cha
+ */
 /**
  * This class controls the flow of events in homescreen
  * @author nguyenlm

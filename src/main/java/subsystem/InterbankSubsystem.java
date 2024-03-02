@@ -39,6 +39,9 @@ public class InterbankSubsystem implements InterbankInterface {
 	 * @see InterbankInterface#refund(CreditCard, int,
 	 *      String)
 	 */
+
+	// function refund có mức độ stamp coupling vì không sử dụng biến card
+	// vẫn là vấn đề truyền thừa thông tin
 	public PaymentTransaction refund(CreditCard card, int amount, String contents) {
 		PaymentTransaction transaction = ctrl.refund(card, amount, contents);
 		return transaction;
