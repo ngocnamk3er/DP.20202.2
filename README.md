@@ -44,3 +44,7 @@ Click on `Run` -> `Run Configurations...`  -> `Java Application`, create a new l
 - manhvd   - Software Engeneering Student - k61
 - hieudm   - ICT - k61
 - thanhld  - ICT - k62
+## Week2- coupling
+đánh giá tính coupling của book.java, cd.java, media.java, function calculatheSippingFee của DeliveryInfo.java,
+function refund của InterbankSubsystem.java, Utils.java, HomeController.java, PaymentController.java
+PlaceOrderControlller.java , ViewCartController.java, MyMap.java

@@ -17,6 +17,7 @@ public class BaseController {
      * @param media
      * @return CartMedia or null
      */
+
     public CartItem checkMediaInCart(Media media){
         return SessionInformation.cartInstance.checkMediaInCart(media);
     }
@@ -29,3 +30,4 @@ public class BaseController {
         return SessionInformation.cartInstance.getListMedia();
     }
 }
+
