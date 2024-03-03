@@ -1,6 +1,7 @@
 ### Bài 2: Coupling
-- Subteam 1: Nguyễn Văn A, Nguyễn Thị B
-- Subteam 2: Nguyễn Văn C, Nguyễn Thị D
+#### Ninh Thành Vinh:
+- Xuất hiện common coupling trong package 'controller' khi các class trong package này đều sử dụng chung các biến static trong class 'SessionInformation'
+- Xuất hiện stamp coupling trong các class Cart.jave và DeliveryInfo.java trong package 'entity' khi các class này chứa method chỉ sử dụng một phần của các parameter được truyền vào hoặc không sử dụng
 
 
 
