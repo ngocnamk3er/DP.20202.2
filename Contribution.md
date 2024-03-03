@@ -2,7 +2,8 @@
 - Subteam 1: Nguyễn Văn A, Nguyễn Thị B
 - Subteam 2: Nguyễn Văn C, Nguyễn Thị D
 
-
+- common coupling trong package "controller" khi dung chung các
+biến static trong class "SessionInformation"
 
 
 

@@ -11,7 +11,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class Order {
-
     private int shippingFees;
     private int subtotal;
     private int tax;
@@ -23,7 +22,7 @@ public class Order {
         this.subtotal = 0;
         this.tax = 0;
     }
-
+    //common coupling: cartInstance
     public Order(Cart cart) {
         List<OrderItem> orderItems = new ArrayList<>();
         for (Object object : SessionInformation.cartInstance.getListMedia()) {

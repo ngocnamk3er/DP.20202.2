@@ -19,7 +19,6 @@ import java.util.Objects;
  * @author
  */
 public class AuthenticationController extends BaseController {
-
     public boolean isAnonymousSession() {
         try {
             getMainUser();
@@ -29,12 +28,15 @@ public class AuthenticationController extends BaseController {
         }
     }
 
+
+
     public User getMainUser() throws ExpiredSessionException {
         if (SessionInformation.mainUser == null || SessionInformation.expiredTime == null || SessionInformation.expiredTime.isBefore(LocalDateTime.now())) {
             logout();
             throw new ExpiredSessionException();
         } else return SessionInformation.mainUser.cloneInformation();
     }
+//common coupling: mainUser, expiredTime
 
     public void login(String email, String password) throws Exception {
         try {
@@ -46,7 +48,7 @@ public class AuthenticationController extends BaseController {
             throw new FailLoginException();
         }
     }
-
+    //common coupling: mainUser, expiredTime
     public void logout() {
         SessionInformation.mainUser = null;
         SessionInformation.expiredTime = null;
