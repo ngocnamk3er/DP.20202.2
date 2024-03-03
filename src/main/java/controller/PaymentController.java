@@ -103,6 +103,7 @@ public class PaymentController extends BaseController {
 		return result;
 	}
 
+	// Common coupling: emptyCart() sử dụng global data SessionInformation là cartInstance
 	public void emptyCart(){
         SessionInformation.cartInstance.emptyCart();
     }

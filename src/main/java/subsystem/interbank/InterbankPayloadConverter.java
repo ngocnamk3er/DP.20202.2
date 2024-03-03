@@ -48,6 +48,7 @@ public class InterbankPayloadConverter {
      * @param responseText
      * @return
      */
+    // Control coupling: extractPaymentTransaction() sử dụng switch case với các case là các mã lỗi chưa hợp lý
     PaymentTransaction extractPaymentTransaction(String responseText) {
         MyMap response = convertJSONResponse(responseText);
 

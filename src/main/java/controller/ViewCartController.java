@@ -14,6 +14,8 @@ public class ViewCartController extends BaseController{
      * This method checks the available products in Cart
      * @throws SQLException
      */
+    
+    // Common coupling: checkAvailabilityOfProduct() sử dụng global data SessionInformation là cartInstance
     public void checkAvailabilityOfProduct() throws SQLException{
         SessionInformation.cartInstance.checkAvailabilityOfProduct();
     }

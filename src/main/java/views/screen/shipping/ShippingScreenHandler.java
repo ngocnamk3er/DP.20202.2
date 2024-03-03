@@ -66,6 +66,7 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 		}
 	}
 
+	// Common coupling: setupData() sử dụng global data ShippingConfigs là PROVINCES và RUSH_SUPPORT_PROVINCES_INDEX
 	protected void setupData(Object dto) throws Exception {
 		this.order = (Order) dto;
 		this.province.getItems().addAll(ShippingConfigs.PROVINCES);
@@ -83,6 +84,7 @@ public class ShippingScreenHandler extends BaseScreenHandler {
 
 	}
 
+	// Common coupling: submitDeliveryInfo sử dụng global data ViewsConfig là INVOICE_SCREEN_PATH
 	@FXML
 	void submitDeliveryInfo(MouseEvent event) throws IOException, InterruptedException, SQLException {
 

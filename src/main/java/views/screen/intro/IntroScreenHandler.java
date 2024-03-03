@@ -38,7 +38,7 @@ public class IntroScreenHandler extends BaseScreenHandler {
         }
     }
 
-
+    // Stamp coupling: setupData() truyền vào dto nhưng không sử dụng đến
     protected void setupData(Object dto) throws Exception {
         return;
     }

@@ -24,6 +24,8 @@ public class Order {
         this.tax = 0;
     }
 
+    // Stamp coupling: Truyền vào Cart, nhưng chỉ dung cart.calSubtotal() để lấy giá trị subtotal
+    // Common coupling: orderMediaList sử dụng global data SessionInformation là cartInstance
     public Order(Cart cart) {
         List<OrderItem> orderItems = new ArrayList<>();
         for (Object object : SessionInformation.cartInstance.getListMedia()) {

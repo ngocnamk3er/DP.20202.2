@@ -92,6 +92,8 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         return (HomeController) super.getBController();
     }
 
+    // Stamp coupling: setBController() truyền vào dto nhưng không sử dụng đến
+    // Common coupling: setupData() sử dụng global data ViewsConfig là HOME_MEDIA_PATH
     protected void setupData(Object dto) throws Exception {
         setBController(new HomeController());
         this.authenticationController = new AuthenticationController();
@@ -110,6 +112,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         }
     }
 
+    // Common coupling: aimsImage, cartImage sử dụng global data ViewsConfig là CART_SCREEN_PATH
     protected void setupFunctionality() throws Exception {
 
         aimsImage.setOnMouseClicked(e -> {
@@ -148,6 +151,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         super.show();
     }
 
+    // Common coupling: aimsImage, cartImage sử dụng global data ViewsConfig là IMAGE_PATH
     public void setImage() {
         // fix image path caused by fxml
         File file1 = new File(ViewsConfig.IMAGE_PATH + "/" + "Logo.png");
@@ -213,6 +217,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         if (observable instanceof MediaHandler) update((MediaHandler) observable);
     }
 
+    // Common coupling: cartInstance sử dụng global data SessionInformation là cartInstance
     private void update(MediaHandler mediaHandler) {
         int requestQuantity = mediaHandler.getRequestQuantity();
         Media media = mediaHandler.getMedia();
@@ -249,6 +254,8 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
         }
     }
 
+    // Stamp coupling: redirectLoginScreen() truyền vào event, nhưng không sử dụng đến
+    // Common coupling: LoginScreenHandler sử dụng global data ViewsConfig là LOGIN_SCREEN_PATH
     @FXML
     void redirectLoginScreen(MouseEvent event) {
         try {

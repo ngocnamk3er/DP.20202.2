@@ -62,6 +62,8 @@ public class MyMap extends LinkedHashMap<String, Object> {
 	 * @throws IllegalAccessException
 	 * @throws IllegalArgumentException
 	 */
+
+	// Content coupling: toMyMap() truy cập trực tiếp vào field của obj bằng việc thay đổi setAccessible chứ không thông qua các phương thức được tạo ra để truy cập vào field của obj
 	public static Map<String, Object> toMyMap(Object obj) throws IllegalArgumentException, IllegalAccessException {
 		Map<String, Object> map = new MyMap();
 		List<Field> fields = new ArrayList<>();

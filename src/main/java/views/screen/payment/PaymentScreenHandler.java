@@ -73,6 +73,7 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 		});
 	}
 
+	// Common coupling: confirmToPayOrder sử dụng global data ViewsConfig là RESULT_SCREEN_PATH
 	void confirmToPayOrder() throws IOException{
 		String contents = "pay order";
 		PaymentController ctrl = (PaymentController) getBController();

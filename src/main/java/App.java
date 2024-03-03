@@ -21,6 +21,7 @@ public class App extends Application {
 	@FXML
 	ImageView logo;
 
+	// Common coupling: start() sử dụng global data ViewsConfig là INTRO_SCREEN_PATH
 	@Override
 	public void start(Stage primaryStage) {
 		try {

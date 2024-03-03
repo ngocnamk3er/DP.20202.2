@@ -60,6 +60,7 @@ public class Cart {
         if (!allAvailable) throw new MediaNotAvailableException("Some media not available");
     }
 
+    // Stamp coupling: Truyền vào Cart, nhưng chỉ dụng Id của Media để so sánh
     public CartItem checkMediaInCart(Media media){
         for (CartItem cartItem : lstCartItem) {
             if (cartItem.getMedia().getId() == media.getId()) return cartItem;

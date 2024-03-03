@@ -65,12 +65,13 @@ public class MediaHandler extends FXMLScreenHandler {
 		this.cartScreen = cartScreen;
 		hboxMedia.setAlignment(Pos.CENTER);
 	}
-	
+
 	public void setCartItem(CartItem cartItem) {
 		this.cartItem = cartItem;
 		setMediaInfo();
 	}
 
+	// Common coupling: cartInstance sử dụng global data SessionInformation là cartInstance, ViewsConfig là REGULAR_FONT
 	private void setMediaInfo() {
 		title.setText(cartItem.getMedia().getTitle());
 		price.setText(ViewsConfig.getCurrencyFormat(cartItem.getPrice()));
@@ -96,17 +97,18 @@ public class MediaHandler extends FXMLScreenHandler {
 		initializeSpinner();
 	}
 
-	private void initializeSpinner(){
+	private void initializeSpinner() {
 		SpinnerValueFactory<Integer> valueFactory = //
-			new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, cartItem.getQuantity());
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, cartItem.getQuantity());
 		spinner = new Spinner<Integer>(valueFactory);
-		spinner.setOnMouseClicked( e -> {
+		spinner.setOnMouseClicked(e -> {
 			try {
 				int numOfProd = this.spinner.getValue();
 				int remainQuantity = cartItem.getMedia().getQuantity();
 				LOGGER.info("NumOfProd: " + numOfProd + " -- remainOfProd: " + remainQuantity);
-				if (numOfProd > remainQuantity){
-					LOGGER.info("product " + cartItem.getMedia().getTitle() + " only remains " + remainQuantity + " (required " + numOfProd + ")");
+				if (numOfProd > remainQuantity) {
+					LOGGER.info("product " + cartItem.getMedia().getTitle() + " only remains " + remainQuantity
+							+ " (required " + numOfProd + ")");
 					labelOutOfStock.setText("Sorry, Only " + remainQuantity + " remain in stock");
 					spinner.getValueFactory().setValue(remainQuantity);
 					numOfProd = remainQuantity;
@@ -116,7 +118,7 @@ public class MediaHandler extends FXMLScreenHandler {
 				cartItem.setQuantity(numOfProd);
 
 				// update the total of mediaCart
-				price.setText(ViewsConfig.getCurrencyFormat(numOfProd* cartItem.getPrice()));
+				price.setText(ViewsConfig.getCurrencyFormat(numOfProd * cartItem.getPrice()));
 
 				// update subtotal and amount of Cart
 				cartScreen.updateCartAmount();
@@ -124,7 +126,7 @@ public class MediaHandler extends FXMLScreenHandler {
 			} catch (SQLException e1) {
 				throw new MediaUpdateException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
 			}
-			
+
 		});
 		spinnerFX.setAlignment(Pos.CENTER);
 		spinnerFX.getChildren().add(this.spinner);

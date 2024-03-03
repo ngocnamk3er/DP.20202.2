@@ -3,6 +3,8 @@ package entity.shipping;
 /**
  * @author
  */
+
+// Common coupling: ShippingConfigs cung cấp global data nhưng không có thành phần chịu trách nhiệm quản lý dữ liệu
 public class ShippingConfigs {
 
     public static String[] PROVINCES = {
