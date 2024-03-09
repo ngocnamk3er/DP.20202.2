@@ -9,7 +9,7 @@ import entity.cart.Cart;
  * @author nguyenlm
  */
 public class ViewCartController extends BaseController{
-    
+    //Functional cohesion with checkAvailabilityOfProduct, getCartSubtotal because they are part of use case view cart
     /**
      * This method checks the available products in Cart
      * @throws SQLException

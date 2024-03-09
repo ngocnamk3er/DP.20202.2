@@ -4,6 +4,7 @@ import entity.order.Order;
 
 public class Invoice {
 
+    //Functional cohesion, because it only has one function to save the invoice
     private Order order;
     private int amount;
     

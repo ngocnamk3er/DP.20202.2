@@ -23,6 +23,7 @@ import subsystem.InterbankSubsystem;
  */
 public class PaymentController extends BaseController {
 
+	//Functional cohesion, because it groups the methods that are related to the payment process
 	/**
 	 * Represent the card used for payment
 	 */

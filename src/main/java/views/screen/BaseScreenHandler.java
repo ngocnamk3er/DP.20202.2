@@ -55,6 +55,7 @@ public abstract class BaseScreenHandler extends FXMLScreenHandler {
 		this.bController = bController;
 	}
 
+	//Sequence cohesion vì method này là đầu vào cho nhiều method khác
 	public BaseController getBController(){
 		return this.bController;
 	}

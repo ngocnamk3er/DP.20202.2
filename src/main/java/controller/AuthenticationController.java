@@ -20,6 +20,7 @@ import java.util.Objects;
  */
 public class AuthenticationController extends BaseController {
 
+    //Functional cohesion vì chỉ chứa các method liên quan đến việc xác thực người dùng
     public boolean isAnonymousSession() {
         try {
             getMainUser();

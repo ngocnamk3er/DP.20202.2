@@ -28,6 +28,7 @@ public class PlaceOrderController extends BaseController {
      */
     private static Logger LOGGER = utils.Utils.getLogger(PlaceOrderController.class.getName());
 
+    //Functional cohesion with placeOrder, createOrder, createInvoice, processDeliveryInfo because they are part of use case place order
     /**
      * This method checks the availability of product when user click PlaceOrder button
      * @throws SQLException
@@ -56,6 +57,7 @@ public class PlaceOrderController extends BaseController {
         return new Invoice(order);
     }
 
+    //Communication cohesion with validateDeliveryInfo, processDeliveryInfo because of relating to the data info
     /**
      * This method takes responsibility for processing the shipping info from user
      * @param info
