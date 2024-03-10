@@ -33,7 +33,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 
-
+// lớp LoginScreenHandler có mức độ temporal cohesion vì các phương thức liên quan đến trình tự thực hiện
 public class LoginScreenHandler extends BaseScreenHandler{
 
     public static Logger LOGGER = Utils.getLogger(LoginScreenHandler.class.getName());

@@ -12,6 +12,7 @@ import views.screen.ViewsConfig;
 
 import java.io.IOException;
 
+// lớp PopupScreen.java có mức độ logical cohesion vì các phương thức popup message không liên quan đến nhau
 
 public class PopupScreen extends BaseScreenHandler {
 

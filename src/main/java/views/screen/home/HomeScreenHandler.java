@@ -36,6 +36,7 @@ import views.screen.cart.CartScreenHandler;
 import views.screen.popup.PopupScreen;
 
 
+// lớp HomeScreenHandler có mức độ temporal cohesion vì các phương thức liên quan đến trình tự thực hiện
 public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
     public static Logger LOGGER = Utils.getLogger(HomeScreenHandler.class.getName());

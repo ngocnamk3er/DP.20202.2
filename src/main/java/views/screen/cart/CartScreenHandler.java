@@ -25,7 +25,7 @@ import views.screen.BaseScreenHandler;
 import views.screen.ViewsConfig;
 import views.screen.popup.PopupScreen;
 import views.screen.shipping.ShippingScreenHandler;
-
+// lớp CartScreenHandler có mức độ temporal cohesion vì các phương thức liên quan đến trình tự thực hiện
 public class CartScreenHandler extends BaseScreenHandler {
 	private static Logger LOGGER = Utils.getLogger(CartScreenHandler.class.getName());
 

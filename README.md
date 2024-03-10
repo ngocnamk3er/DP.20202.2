@@ -48,3 +48,6 @@ Click on `Run` -> `Run Configurations...`  -> `Java Application`, create a new l
 đánh giá tính coupling của book.java, cd.java, media.java, function calculatheSippingFee của DeliveryInfo.java,
 function refund của InterbankSubsystem.java, Utils.java, HomeController.java, PaymentController.java
 PlaceOrderControlller.java , ViewCartController.java, MyMap.java
+## Week3- cohesion
+đánh giá tính cohesion của PlaceOrderController.java, Utils.java, Cart.java, PopupScreen.java, LoginScreenHandler.java, HomeScreenHandler.java
+CartScreenHandler.java
