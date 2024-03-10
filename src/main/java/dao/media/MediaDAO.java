@@ -12,6 +12,9 @@ import java.util.List;
 /**
  * @author
  */
+
+// Communicational cohesion: getAllMedia() và các method liên quan đến MediaDAO chỉ thực hiện các thao tác liên quan đến Media
+
 public class MediaDAO {
 
     public List getAllMedia() throws SQLException {
@@ -50,10 +53,9 @@ public class MediaDAO {
         return null;
     }
 
-
     public void updateMediaFieldById(String tbname, int id, String field, Object value) throws SQLException {
         Statement stm = AIMSDB.getConnection().createStatement();
-        if (value instanceof String){
+        if (value instanceof String) {
             value = "\"" + value + "\"";
         }
         stm.executeUpdate(" update Media set" + " "

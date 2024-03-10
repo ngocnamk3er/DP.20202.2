@@ -13,11 +13,13 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-
-
 /**
  * @author
  */
+
+// Temporal cohesion: md5() không liên quan đến class chỉ thực hiện theo thứ tự
+// thời gian bởi việc thực hiện login() sử dụng md5() nên để md5() ở phần utils
+
 public class AuthenticationController extends BaseController {
 
     public boolean isAnonymousSession() {
@@ -29,18 +31,22 @@ public class AuthenticationController extends BaseController {
         }
     }
 
-    // Common coupling: getMainUser() sử dụng global data SessionInformation là mainUser và expiredTime
+    // Common coupling: getMainUser() sử dụng global data SessionInformation là
+    // mainUser và expiredTime
     public User getMainUser() throws ExpiredSessionException {
-        if (SessionInformation.mainUser == null || SessionInformation.expiredTime == null || SessionInformation.expiredTime.isBefore(LocalDateTime.now())) {
+        if (SessionInformation.mainUser == null || SessionInformation.expiredTime == null
+                || SessionInformation.expiredTime.isBefore(LocalDateTime.now())) {
             logout();
             throw new ExpiredSessionException();
-        } else return SessionInformation.mainUser.cloneInformation();
+        } else
+            return SessionInformation.mainUser.cloneInformation();
     }
 
     public void login(String email, String password) throws Exception {
         try {
             User user = new UserDAO().authenticate(email, md5(password));
-            if (Objects.isNull(user)) throw new FailLoginException();
+            if (Objects.isNull(user))
+                throw new FailLoginException();
             SessionInformation.mainUser = user;
             SessionInformation.expiredTime = LocalDateTime.now().plusHours(24);
         } catch (SQLException ex) {
@@ -48,7 +54,8 @@ public class AuthenticationController extends BaseController {
         }
     }
 
-    // Common coupling: logout() sử dụng global data SessionInformation là mainUser và expiredTime
+    // Common coupling: logout() sử dụng global data SessionInformation là mainUser
+    // và expiredTime
     public void logout() {
         SessionInformation.mainUser = null;
         SessionInformation.expiredTime = null;

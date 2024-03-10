@@ -21,6 +21,9 @@ import subsystem.InterbankSubsystem;
  * @author hieud
  *
  */
+
+// Temporal cohesion: getExpirationDate() không liên quan đến class chỉ thực hiện theo thứ tự thời gian bởi việc thực hiện payOrder() sử dụng getExpirationDate() 
+
 public class PaymentController extends BaseController {
 
 	/**

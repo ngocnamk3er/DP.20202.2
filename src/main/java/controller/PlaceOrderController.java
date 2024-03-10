@@ -21,6 +21,9 @@ import java.util.regex.Pattern;
  * This class controls the flow of place order usecase in our AIMS project
  * @author nguyenlm
  */
+
+// Temporal cohesion: validateDeliveryInfo(), validatePhoneNumber(), validateName(), validateAddress() chỉ thực hiện theo thứ tự thời gian bởi các method của lớp, nên tách riêng ra thành các class riêng và nên có 1 interface chung để chúng có thể implement
+
 public class PlaceOrderController extends BaseController {
 
     /**

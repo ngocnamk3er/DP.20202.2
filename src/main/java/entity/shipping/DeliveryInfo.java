@@ -3,6 +3,8 @@ package entity.shipping;
 import entity.order.Order;
 import org.example.DistanceCalculator;
 
+// Communicational cohesion: calculateShippingFee() thực hiện các thao tác liên quan đến việc tính phí ship dựa trên order có dữ liệu liên quan đến DeliveryInfo 
+
 public class DeliveryInfo {
 
     protected String name;
