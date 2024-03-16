@@ -21,6 +21,7 @@ import subsystem.InterbankSubsystem;
  * @author hieud
  *
  */
+// lớp PaymentController.java vi phạm SRP vì có method getExpirationDate không liên quan đến các method còn lại
 public class PaymentController extends BaseController {
 
 	/**

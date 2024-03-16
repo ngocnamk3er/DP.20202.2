@@ -14,6 +14,7 @@ MyMap ở mức độ content coupling vì sử dụng chỉ định truy cập 
  * @author hieud
  *
  */
+// lớp MyMap vi phạm SRP vì thực hiện quá nhiều nhiệm vụ
 public class MyMap extends LinkedHashMap<String, Object> {
 	private static final long serialVersionUID = 1L;
 

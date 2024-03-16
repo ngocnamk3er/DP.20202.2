@@ -12,6 +12,7 @@ import java.util.Date;
 /**
  * @author
  */
+// BookDao vi phạm OCP vì khi ta muốn thêm sản phẩm thì cần thêm hàm getMediaById
 public class BookDAO extends MediaDAO {
 
     @Override

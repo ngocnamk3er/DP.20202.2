@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * @author
  */
+// lớp MediaDao vi phạm SRP vì lớp này thực hiện quá nhiều nhiệm vụ
 public class MediaDAO {
 
     public List getAllMedia() throws SQLException {

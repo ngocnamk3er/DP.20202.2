@@ -11,6 +11,7 @@ import java.util.Date;
 /**
  * @author
  */
+// CDDao vi phạm OCP vì khi cần thêm 1 sản phẩm thì cần thêm hàm getMediaById
 public class CDDAO extends MediaDAO {
 
     @Override

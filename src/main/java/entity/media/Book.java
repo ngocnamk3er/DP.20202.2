@@ -11,6 +11,7 @@ import entity.db.AIMSDB;
 các lớp book.java, cd.java, media.java đều có mức độ content coupling vì các lớp trên đều để các thuộc tính của mình public
 mà không phải private. Dẫn tới các lớp khác có thể sửa đổi mà không cần qua method get, set
  */
+
 public class Book extends Media {
 
     String author;

@@ -13,7 +13,8 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-
+//AuthenticationController.java vi phạm SRP,vì các method login, logout, getMainUser, isAnonymousSession liên quan đến authentication
+// nhưng method md5 lại không liên quan. Do đó nên tách nó ra thành một class riêng thuộc gói Utils
 
 /**
  * @author

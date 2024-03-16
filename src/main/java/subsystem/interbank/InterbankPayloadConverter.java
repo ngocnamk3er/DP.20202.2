@@ -13,6 +13,9 @@ import java.util.Map;
 /**
  * @author
  */
+
+// lớp InterbankPayloadConverter.java vi phạm SRP vì các method getToday, extrachPaymentTransaction không liên quan đến nhiệm vụ của lớp
+// 2 method này nên đc tách ra thành class riêng
 public class InterbankPayloadConverter {
 
     /**

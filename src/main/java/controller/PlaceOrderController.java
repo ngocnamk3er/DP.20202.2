@@ -23,6 +23,10 @@ import java.util.regex.Pattern;
  */
 // lớp PlaceOrderController có mức độ logical cohesion vì các phương thức validateDeliveryInfo, validatePhoneNumber, validateAddress
 // validateName không quá liên quan đến nhau
+
+
+
+// lớp PlaceOrderController vi phạm SRP, do các method validate xử lý vấn đề không liên quan đến PlaceOrder, nên gộp các method ấy thành 1 class riêng
 public class PlaceOrderController extends BaseController {
 
     /**
