@@ -17,6 +17,11 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.logging.Logger;
 
+/*
+ * SOLID - Single responsibility principle: ApplicationProgrammingInterface đang thực hiện nhiều hơn 1 nhiệm vụ đó là thực hiện request , vừa tạo kết nối HTTP vừa thực hiện điều khiển truy cập allMethods()
+ * Có xem xét tách ra thành các class nhỏ hơn
+ */
+
 public class ApplicationProgrammingInterface {
 
 	public static DateFormat DATE_FORMATTER = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -72,7 +77,9 @@ public class ApplicationProgrammingInterface {
 		return conn;
 	}
 
-	// Content coupling: allowMethods() thay đổi giá trị trường của modifiersField bằng bằng việc thay đổi setAccessible và setInt chứ không phải thông qua các phương thức được tạo ra để thay đổi giá trị của methodsField
+	// Content coupling: allowMethods() thay đổi giá trị trường của modifiersField
+	// bằng bằng việc thay đổi setAccessible và setInt chứ không phải thông qua các
+	// phương thức được tạo ra để thay đổi giá trị của methodsField
 	private static void allowMethods(String... methods) {
 		try {
 			Field methodsField = HttpURLConnection.class.getDeclaredField("methods");

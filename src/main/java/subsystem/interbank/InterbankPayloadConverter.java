@@ -14,6 +14,10 @@ import java.util.Map;
  * @author
  */
 
+ /*
+ * SOLID - Open/closed principle: InterbankPayloadConverter khó mở rộng nếu trong tương lai có thêm phương thức thanh toán mới do convertToRequestPayload(),  hiện tại chỉ nhận vào CreditCard và extractPaymentTransaction() hiện tại chỉ xử lí cho 1 kiểu response của CreditCard
+ */
+
 // Coincidental cohesion: getToday không liên quan đến class
 
 public class InterbankPayloadConverter {

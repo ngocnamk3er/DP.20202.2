@@ -11,6 +11,11 @@ import subsystem.interbank.InterbankSubsystemController;
  * @author hieud
  *
  */
+
+/*	
+ * SOLID - Open/closed principle: InterbankSubsystem khó mở rộng nếu trong tương lai có thêm phương thức thanh toán mới do payOrder() và refund() chỉ nhận vào CreditCard
+ */
+
 public class InterbankSubsystem implements InterbankInterface {
 
 	/**

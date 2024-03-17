@@ -12,6 +12,13 @@ import entity.payment.PaymentTransaction;
  * @author hieud
  * 
  */
+
+/*
+ * SOLID - Open/closed principle: InterbankInterface khó mở rộng nếu trong tương
+ * lai có thêm phương thức thanh toán mới do payOrder() và refund() chỉ nhận vào
+ * CreditCard
+ */
+
 public interface InterbankInterface {
 
 	/**

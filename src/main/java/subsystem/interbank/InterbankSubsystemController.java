@@ -3,6 +3,10 @@ package subsystem.interbank;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 
+ /*
+ * SOLID - Open/closed principle: InterbankPayloadConverter khó mở rộng nếu trong tương lai có thêm phương thức thanh toán mới do payOrder(), refund() hiện tại chỉ nhận vào CreditCard
+ */
+
 public class InterbankSubsystemController {
 
 	private static InterbankPayloadConverter interbankPayloadConverter = new InterbankPayloadConverter();

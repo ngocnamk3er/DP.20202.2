@@ -17,6 +17,11 @@ import java.util.Objects;
  * @author
  */
 
+/*
+ * SOLID - Single responsibility principle: AuthenticationController đang thực hiện nhiều hơn 1 nhiệm vụ đó là xác thực người dùng, quản lý session và mã hóa dữ liệu
+ * Có xem xét đưa md5() vào Utils , để SessionInformation quản lý getMainUser() và AuthenticationController gồm: isAnonymousSession(), login(), logout()
+ */
+
 // Temporal cohesion: md5() không liên quan đến class chỉ thực hiện theo thứ tự
 // thời gian bởi việc thực hiện login() sử dụng md5() nên để md5() ở phần utils
 

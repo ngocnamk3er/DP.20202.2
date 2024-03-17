@@ -1,6 +1,5 @@
 ### Bài 2: Coupling
-- Subteam 2: 
-    Ong Thế Tùng:
+    Ong Thế Tùng - Subteam2:
         - Đánh giá Coupling trong codebase: 
             + package common đa phần là data coupling
             + package controller chứa nhiều common coupling là AuthenticationController/getMainUser(),logout(), BaseController/checkMediaInCart(),getListCartMedia(), PaymentController emptyCart(), PlaceOrderController/placeOrder(), createOrder(), ViewCartController/checkAvailabilityOfProduct() do sử dụng global data chưa có thành phần quản lí là SessionInformation.
@@ -12,8 +11,7 @@
 
 
 ### Bài 2: Cohesion
-- Subteam 2:
-    Ong Thế Tùng:
+    Ong Thế Tùng - Subteam 2:
         - Đánh giá Cohesion của codebase:
             + package common đa phần là data coupling
             + package controller: 
@@ -31,7 +29,21 @@
             + package views:  
                 - PopupScreen: Logical cohesion: success(), error(), loading() thực hiện các thao tác liên quan đến hiển thị popup
 
-
-
-
+### Bài 3: SOLID: SRP, OCP
+    Ong Thế Tùng - Subteam 2:
+        - Đánh giá SOLID SRP và OCP trong codebase
+            + SRP:
+                - AuthenticationController đang thực hiện nhiều hơn 1 nhiệm vụ đó là xác thực người dùng, quản lý session và mã hóa dữ liệu Có xem xét đưa md5() vào Utils , để SessionInformation quản lý getMainUser() và AuthenticationController gồm: isAnonymousSession(), login(), logout()
+                - PaymentController đang thực hiện nhiều hơn 1 nhiệm vụ đó là thanh toán và quản lý giỏ hàng và lấy ngày hết hạn Có xem xét đưa xử lí giỏ hàng vào CartController, getExpirationDate() có thể xử lí bằng việc tạo class CreditCardValidator
+                - DeliveryInfo đang thực hiện nhiều hơn 1 nhiệm vụ đó là cung cấp thông tin giao hàng và tính phí ship. Có xem xét tách phần tính phí ship ra thành class khác
+                - ApplicationProgrammingInterface đang thực hiện nhiều hơn 1 nhiệm vụ đó là thực hiện request , vừa tạo kết nối HTTP vừa thực hiện điều khiển truy cập allMethods(). Có xem xét tách ra thành các class nhỏ hơn
+            + OCP:
+                - Trong trường hợp tương lai có mở rộng thêm phương thức thanh toán mới nên tạo abstract class Card cho phép các class thẻ con kế thừa và các method xử lí theo Card, đưa method getExpirationDate() của class PaymentController ra ngoài để cho phép xử lí trong trường hợp có thể các loại thẻ khác có thể có kiểu date khác nhau bằng cách tạo class CardValidator để xử lí validate thẻ hoặc tạo interface CardValidator để implement và xử lí với từng Card, subsystem liên quan đến interbank và PaymentTransaction cần thay đổi tham số truyền vào là Card và tạo thêm các interface để implement cho xử lí với từng loại Card
+                - PaymentController khó mở rộng nếu trong tương lai có phương thức thanh toán với thông tin của phương thức thanh toán khác như thẻ nội địa. Có xem xét tạo class CreditCardValidator để xử lí validate thẻ hoặc tạo interface CreditCardValidator để implement trong trường hợp có thể các loại thẻ khác có date khác nhau. Có thể xem xét tạo class Card để nhiều loại thẻ con như CreditCard, DomesticDebitCard kế thừa 
+                - PaymentTransaction khó mở rộng nếu trong tương lai có thêm phương thức thanh toán mới do hàm khởi tạo hiện tại chỉ nhận vào CreditCard
+                - DeliveryInfo khó mở rộng nếu trong tương lai nếu có thêm cách thức tính phí mới hoặc sử dụng thư viện tính toán khác có thể xem xét tạo interface cho DistanceCalculator với method calculateDistance() để các class tính phí ship khác có thể implement
+                - InterbankInterface khó mở rộng nếu trong tương lai có thêm phương thức thanh toán mới do payOrder() và refund() chỉ nhận vào CreditCard
+                - InterbankSubsystem khó mở rộng nếu trong tương lai có thêm phương thức thanh toán mới do payOrder() và refund() chỉ nhận vào CreditCard
+                - InterbankPayloadConverter khó mở rộng nếu trong tương lai có thêm phương thức thanh toán mới do convertToRequestPayload(),  hiện tại chỉ nhận vào CreditCard và extractPaymentTransaction() hiện tại chỉ xử lí cho 1 kiểu response của CreditCard
+                - InterbankPayloadConverter khó mở rộng nếu trong tương lai có thêm phương thức thanh toán mới do payOrder(), refund() hiện tại chỉ nhận vào CreditCard
 
