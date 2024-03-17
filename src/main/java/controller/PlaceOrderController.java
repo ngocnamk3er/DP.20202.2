@@ -57,7 +57,9 @@ public class PlaceOrderController extends BaseController {
         return new Invoice(order);
     }
 
-    //Communication cohesion with validateDeliveryInfo, processDeliveryInfo because of relating to the data info
+    //Communication cohesion with validateDeliveryInfo, processDeliveryInfo because of relating to the data info\
+    //Các method validateDeliveryInfo, processDeliveryInfo có thể được gói lại vào một class mới validate để tạo ra một class có SRP
+    //Vi phạm SRP
     /**
      * This method takes responsibility for processing the shipping info from user
      * @param info

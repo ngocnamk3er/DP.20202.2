@@ -54,7 +54,7 @@ public class AuthenticationController extends BaseController {
         SessionInformation.mainUser = null;
         SessionInformation.expiredTime = null;
     }
-
+    //Method md5 nên được gói lại ở trong class Utils => Vi phạm SRP
     /**
      * Return a {@link String String} that represents the cipher text
      * encrypted by md5 algorithm.
