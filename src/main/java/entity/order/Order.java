@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-// lớp Order.java vi phạm SRP vì các method Delivery không được viết bên trong class
+// lớp Order.java vi phạm SRP vì các method DeliveryInfo không được viết bên trong class DeliveryInfo
 public class Order {
 
     private int shippingFees;
