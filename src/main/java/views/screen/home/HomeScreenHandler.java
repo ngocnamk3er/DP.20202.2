@@ -37,6 +37,8 @@ import views.screen.popup.PopupScreen;
 
 
 // lớp HomeScreenHandler có mức độ temporal cohesion vì các phương thức liên quan đến trình tự thực hiện
+// lớp này vi phạm LSP vì không dùng 2 phương thức setPreviousScreen và getPreviousScreen của lớp cha BaseScreenHandler
+// lớp này cũng vi phạm ISP do không dùng phương thức setPreviousScreen của lớp cha baseScreenHandler
 public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
     public static Logger LOGGER = Utils.getLogger(HomeScreenHandler.class.getName());

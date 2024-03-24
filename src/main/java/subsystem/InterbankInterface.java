@@ -5,6 +5,7 @@ import common.exception.UnrecognizedException;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 
+// lớp này vi phạm DIP vì phụ thuộc vào Credit card mà không phải 1 abstract class
 /**
  * The {@code InterbankInterface} class is used to communicate with the
  * {@link InterbankSubsystem InterbankSubsystem} to make transaction

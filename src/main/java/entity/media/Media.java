@@ -12,6 +12,7 @@ import java.util.logging.Logger;
  * The general media class, for another media it can be done by inheriting this class
  * @author nguyenlm
  */
+// Media.java vi phạm  LSP vì có nhiều method get set mà các class con extend nó k dùng đến như
 public class Media {
 
     private static Logger LOGGER = Utils.getLogger(Media.class.getName());
