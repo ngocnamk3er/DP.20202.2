@@ -47,3 +47,23 @@
                 - InterbankPayloadConverter khó mở rộng nếu trong tương lai có thêm phương thức thanh toán mới do convertToRequestPayload(),  hiện tại chỉ nhận vào CreditCard và extractPaymentTransaction() hiện tại chỉ xử lí cho 1 kiểu response của CreditCard
                 - InterbankPayloadConverter khó mở rộng nếu trong tương lai có thêm phương thức thanh toán mới do payOrder(), refund() hiện tại chỉ nhận vào CreditCard
 
+### Bài 3: SOLID: LSP, ISP, DIP
+    Ong Thế Tùng - Subteam 2:
+        - Đánh giá SOLID LSP, ISP và DIP trong codebase
+            + LSP:
+                - AuthenticationController không cần triển khai các phương thức khác của BaseController
+                - HomeController không cần triển khai các phương thức khác của BaseController
+                - PaymentController không cần triểnn khai các phương thức khác của BaseController
+                - IntroScreenHandler không cần thiết triển khai một số phương thức của BaseScreenHandler như setPreviousScreen
+                - PopupScreen không cần triển khai các phương thức khác của BaseScreenHandler
+            + ISP: 
+                - BaseController đang rộng hơn những gì các class con cần thiết gây ra LSP cho các con
+                - BaseScreenHandler đang thực hiện quá nhiều phương thức
+            + DIP:
+                - PaymentController đang phụ thuộc vào CreditCard ảnh hưởng đến việc mở rộng nếu có thêm phương thức thanh toán khác
+                - PaymentTransaction phụ thuộc vào CreditCard ảnh hưởng đến việc mở rộng nếu có thêm phương thức thanh toán khác
+                - DeliveryInfo phụ thuộc vào DistanceCalculator ảnh hưởng đến việc mở rộng nếu có thêm cách tính phí ship hay thư viện tính toán khác
+                - InterbankInterface phụ thuộc vào CreditCard ảnh hưởng đến việc mở rộng nếu có thêm phương thức thanh toán khác
+                - InterbankSubsystem phụ thuộc vào CreditCard ảnh hưởng đến việc mở rộng nếu có thêm phương thức thanh toán khác
+                - InterbankPayloadConverter phụ thuộc vào CreditCard ảnh hưởng đến việc mở rộng nếu có thêm phương thức thanh toán khác
+                - InterbankPayloadConverter phụ thuộc vào CreditCard ảnh hưởng đến việc mở rộng nếu có thêm phương thức thanh toán khác

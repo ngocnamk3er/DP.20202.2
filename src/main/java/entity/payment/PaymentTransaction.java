@@ -4,6 +4,9 @@ package entity.payment;
  * SOLID - Open/closed principle: PaymentTransaction khó mở rộng nếu trong tương lai có thêm phương thức thanh toán mới do hàm khởi tạo hiện tại chỉ nhận vào CreditCard
  */
 
+/*
+ * SOLID: Dependency inversion principle: PaymentTransaction phụ thuộc vào CreditCard ảnh hưởng đến việc mở rộng nếu có thêm phương thức thanh toán khác
+ */
 public class PaymentTransaction {
 	private String errorCode;
 	private CreditCard card;

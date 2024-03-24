@@ -13,6 +13,10 @@ import org.example.DistanceCalculator;
  * với method calculateDistance() để các class tính phí ship khác có thể implement
  */
 
+/*
+ * SOLID - Dependency inversion principle: DeliveryInfo phụ thuộc vào DistanceCalculator ảnh hưởng đến việc mở rộng nếu có thêm cách tính phí ship hay thư viện tính toán khác
+ */
+
 // Communicational cohesion: calculateShippingFee() thực hiện các thao tác liên quan đến việc tính phí ship dựa trên order có dữ liệu liên quan đến DeliveryInfo 
 
 public class DeliveryInfo {

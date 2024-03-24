@@ -12,6 +12,10 @@ import views.screen.ViewsConfig;
 
 import java.io.IOException;
 
+/*
+ * SOLID - Liskov substitution principle: PopupScreen không cần triển khai các phương thức khác của BaseScreenHandler
+ */
+
 // Logical cohesion: success(), error(), loading() thực hiện các thao tác liên quan đến hiển thị popup
 
 public class PopupScreen extends BaseScreenHandler {

@@ -36,7 +36,17 @@ import subsystem.InterbankSubsystem;
  * interface CreditCardValidator để implement trong trường hợp có thể các loại
  * thẻ khác có date khác nhau
  * Có thể xem xét tạo class Card để nhiều loại thẻ con như CreditCard,
- * DomesticDebitCard kế thừa 
+ * DomesticDebitCard kế thừa
+ */
+
+/*
+ * SOLID - Liskov substitution principle: PaymentController không cần sử dụng
+ * các phương thức khác của BaseController
+ */
+
+/*
+ * SOLID - Dependency inversion principle: PaymentController đang phụ thuộc vào
+ * CreditCard ảnh hưởng đến việc mở rộng nếu có thêm phương thức thanh toán khác
  */
 
 // Temporal cohesion: getExpirationDate() không liên quan đến class chỉ thực

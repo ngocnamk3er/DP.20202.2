@@ -7,14 +7,19 @@ import subsystem.interbank.InterbankSubsystemController;
 /***
  * The {@code InterbankSubsystem} class is used to communicate with the
  * Interbank to make transaction.
- * 
+ *
  * @author hieud
  *
  */
 
-/*	
+/*
  * SOLID - Open/closed principle: InterbankSubsystem khó mở rộng nếu trong tương lai có thêm phương thức thanh toán mới do payOrder() và refund() chỉ nhận vào CreditCard
  */
+
+/*
+ * SOLID - Dependency inversion principle: InterbankSubsystem phụ thuộc vào CreditCard ảnh hưởng đến việc mở rộng nếu có thêm phương thức thanh toán khác
+ */
+
 
 public class InterbankSubsystem implements InterbankInterface {
 

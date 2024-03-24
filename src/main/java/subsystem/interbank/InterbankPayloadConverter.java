@@ -14,8 +14,12 @@ import java.util.Map;
  * @author
  */
 
- /*
+/*
  * SOLID - Open/closed principle: InterbankPayloadConverter khó mở rộng nếu trong tương lai có thêm phương thức thanh toán mới do convertToRequestPayload(),  hiện tại chỉ nhận vào CreditCard và extractPaymentTransaction() hiện tại chỉ xử lí cho 1 kiểu response của CreditCard
+ */
+
+/*
+ * SOLID - Dependency inversion principle: InterbankPayloadConverter phụ thuộc vào CreditCard ảnh hưởng đến việc mở rộng nếu có thêm phương thức thanh toán khác
  */
 
 // Coincidental cohesion: getToday không liên quan đến class
@@ -24,7 +28,7 @@ public class InterbankPayloadConverter {
 
     /**
      * Convert from native entity into interbank required format
-     * 
+     *
      * @param card
      * @param amount
      * @param contents
@@ -53,7 +57,7 @@ public class InterbankPayloadConverter {
 
     /**
      * Read the response from interbank server
-     * 
+     *
      * @param responseText
      * @return
      */
@@ -106,7 +110,7 @@ public class InterbankPayloadConverter {
     /**
      * Convert response from interbank server as JSON-formatted String into a proper
      * Map
-     * 
+     *
      * @param responseText
      * @return
      */

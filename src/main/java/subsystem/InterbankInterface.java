@@ -19,6 +19,11 @@ import entity.payment.PaymentTransaction;
  * CreditCard
  */
 
+/*
+ * SOLID - Dependency inversion principle: InterbankInterface phụ thuộc vào
+ * CreditCard ảnh hưởng đến việc mở rộng nếu có thêm phương thức thanh toán khác
+ */
+
 public interface InterbankInterface {
 
 	/**

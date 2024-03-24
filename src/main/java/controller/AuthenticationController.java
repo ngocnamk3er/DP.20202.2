@@ -22,6 +22,10 @@ import java.util.Objects;
  * Có xem xét đưa md5() vào Utils , để SessionInformation quản lý getMainUser() và AuthenticationController gồm: isAnonymousSession(), login(), logout()
  */
 
+/*
+ * SOLID - Liskov substitution principle: AuthenticationController không cần triển khai các phương thức khác của BaseController
+ */
+
 // Temporal cohesion: md5() không liên quan đến class chỉ thực hiện theo thứ tự
 // thời gian bởi việc thực hiện login() sử dụng md5() nên để md5() ở phần utils
 

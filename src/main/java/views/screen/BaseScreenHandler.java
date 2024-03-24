@@ -14,6 +14,10 @@ import utils.Utils;
 import views.screen.home.HomeScreenHandler;
 import views.screen.popup.PopupScreen;
 
+/*
+ * SOLID - Interface segregation principle: BaseScreenHandler đang thực hiện quá nhiều phương thức
+ */
+
 public abstract class BaseScreenHandler extends FXMLScreenHandler {
 
 	private static final Logger LOGGER = Utils.getLogger(BaseScreenHandler.class.getName());

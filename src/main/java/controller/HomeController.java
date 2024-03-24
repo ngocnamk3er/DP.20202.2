@@ -9,6 +9,11 @@ import dao.media.MediaDAO;
  * This class controls the flow of events in homescreen
  * @author nguyenlm
  */
+
+/*
+ * SOLID - Liskov substitution principle: HomeController không cần triển khai các phương thức khác của BaseController
+ */
+
 public class HomeController extends BaseController {
 
 
