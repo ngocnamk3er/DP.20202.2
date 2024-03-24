@@ -12,6 +12,9 @@ import entity.payment.PaymentTransaction;
  * @author hieud
  * 
  */
+
+//Vi phạm DIP vì khi thay đổi phương thức thanh toán, có thể phương thức thanh toán mới sẽ không chấp nhận tham số truyền Credit Card
+	// Ví dụ VNPay không chấp nhận truyền tham số credit card
 public interface InterbankInterface {
 
 	/**
