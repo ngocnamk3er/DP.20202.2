@@ -12,6 +12,7 @@ các lớp book.java, cd.java, media.java đều có mức độ content couplin
 mà không phải private. Dẫn tới các lớp khác có thể sửa đổi mà không cần qua method get, set
  */
 
+// lớp này vi phạm lsp vì không gọi super phương thức của class cha Media.java
 public class Book extends Media {
 
     String author;

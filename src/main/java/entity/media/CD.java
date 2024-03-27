@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
-
+//lớp này vi phạm lsp vì không gọi super phương thức của class cha Media.java
 public class CD extends Media {
 
     String artist;
