@@ -13,7 +13,6 @@ import entity.payment.PaymentTransaction;
 import subsystem.InterbankInterface;
 import subsystem.InterbankSubsystem;
 
-
 /**
  * This {@code PaymentController} class control the flow of the payment process
  * in our AIMS Software.
@@ -21,6 +20,39 @@ import subsystem.InterbankSubsystem;
  * @author hieud
  *
  */
+
+/*
+ * SOLID - Single responsibility principle: PaymentController đang thực hiện
+ * nhiều hơn 1 nhiệm vụ đó là thanh toán và quản lý giỏ hàng và lấy ngày hết hạn
+ * Có xem xét đưa xử lí giỏ hàng vào CartController, getExpirationDate() có thể
+ * xử lí bằng việc tạo class CreditCardValidator
+ */
+
+/*
+ * SOLID - Open/closed principle: PaymentController khó mở rộng nếu trong tương
+ * lai có phương thức thanh toán với thông tin của phương thức thanh toán khác
+ * như thẻ nội địa
+ * Có xem xét tạo class CreditCardValidator để xử lí validate thẻ hoặc tạo
+ * interface CreditCardValidator để implement trong trường hợp có thể các loại
+ * thẻ khác có date khác nhau
+ * Có thể xem xét tạo class Card để nhiều loại thẻ con như CreditCard,
+ * DomesticDebitCard kế thừa
+ */
+
+/*
+ * SOLID - Liskov substitution principle: PaymentController không cần sử dụng
+ * các phương thức khác của BaseController
+ */
+
+/*
+ * SOLID - Dependency inversion principle: PaymentController đang phụ thuộc vào
+ * CreditCard ảnh hưởng đến việc mở rộng nếu có thêm phương thức thanh toán khác
+ */
+
+// Temporal cohesion: getExpirationDate() không liên quan đến class chỉ thực
+// hiện theo thứ tự thời gian bởi việc thực hiện payOrder() sử dụng
+// getExpirationDate()
+
 public class PaymentController extends BaseController {
 
 	/**
@@ -103,7 +135,9 @@ public class PaymentController extends BaseController {
 		return result;
 	}
 
-	public void emptyCart(){
-        SessionInformation.cartInstance.emptyCart();
-    }
+	// Common coupling: emptyCart() sử dụng global data SessionInformation là
+	// cartInstance
+	public void emptyCart() {
+		SessionInformation.cartInstance.emptyCart();
+	}
 }
