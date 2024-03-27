@@ -11,8 +11,14 @@ public class DeliveryInfo {
     protected String address;
     protected String shippingInstructions;
     protected DistanceCalculator distanceCalculator;
+    /*
+     * SOLID - Dependency inversion principle: DeliveryInfo phụ thuộc vào
+     * DistanceCalculator ảnh hưởng đến việc mở rộng nếu có thêm cách tính phí ship
+     * hay thư viện tính toán khác
+     */
 
-    public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions, DistanceCalculator distanceCalculator) {
+    public DeliveryInfo(String name, String phone, String province, String address, String shippingInstructions,
+            DistanceCalculator distanceCalculator) {
         this.name = name;
         this.phone = phone;
         this.province = province;
