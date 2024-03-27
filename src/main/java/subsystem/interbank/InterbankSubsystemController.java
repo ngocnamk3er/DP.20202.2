@@ -5,6 +5,8 @@ import entity.payment.PaymentTransaction;
 
 public class InterbankSubsystemController {
 
+
+	// Để tuân thủ DIP, có thể tạo các interface PayloadConverter và Boundary để InterbankPayloadConverter, InterbankBoundary
 	private static InterbankPayloadConverter interbankPayloadConverter = new InterbankPayloadConverter();
 	private static InterbankBoundary interbankBoundary = new InterbankBoundary();
 

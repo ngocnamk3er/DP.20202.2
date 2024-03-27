@@ -11,6 +11,9 @@ import subsystem.interbank.InterbankSubsystemController;
  * @author hieud
  *
  */
+
+//Interface InterbankInterface có 2 method là payOrder và refund đều được sử dụng trong InterbankSubsystem
+// Không vi phạm ISP
 public class InterbankSubsystem implements InterbankInterface {
 
 	/**

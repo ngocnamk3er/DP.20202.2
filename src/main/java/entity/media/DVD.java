@@ -1,9 +1,7 @@
 package entity.media;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
-import java.util.List;
 
 public class DVD extends Media {
 
@@ -19,6 +17,7 @@ public class DVD extends Media {
 
     }
 
+    //Không gọi super phương thức class cha -> thay đổi thuộc tính class cha
     public DVD(int id, String title, String category, int price, int quantity, String type, String discType,
             String director, int runtime, String studio, String subtitles, Date releasedDate, String filmType) throws SQLException{
         super(id, title, category, price, quantity, type);
